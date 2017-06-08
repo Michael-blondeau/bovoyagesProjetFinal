@@ -17,7 +17,7 @@
     </auth-constraint>
   </security-constraint>
   <login-config>
-    <auth-method>FORM</auth-method>
+    <auth-method>BASIC</auth-method>
     <form-login-config>
       <form-login-page>/auth/login.xhtml</form-login-page>
       <form-error-page>/auth/error.xhtml</form-error-page>
