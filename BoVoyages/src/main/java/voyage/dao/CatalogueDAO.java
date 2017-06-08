@@ -35,7 +35,7 @@ public class CatalogueDAO implements ICatalogueDAO, Serializable {
 
 	private static final Logger LOG = Logger.getLogger(CatalogueDAO.class.getCanonicalName());
 
-	@PersistenceContext(unitName = "BoVoyages")
+	@PersistenceContext(unitName = "bovoyagefinale")
 	private EntityManager em;
 	
 	@Resource
