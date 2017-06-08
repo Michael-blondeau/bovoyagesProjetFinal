@@ -48,7 +48,7 @@ public class DatesVoyages implements Serializable {
 	
 	public DatesVoyages() {	}
 
-	public DatesVoyages(Date dateDepart, Date dateRetour, double prix, int nbVoyageurs) {
+	public DatesVoyages(Date dateDepart, Date dateRetour, double prix) {
 		
 		this.dateDepart = dateDepart;
 		this.dateRetour = dateRetour;

@@ -23,7 +23,7 @@ public class DatesVoyagesBean implements Serializable {
 	private Date dateDepart;
 	private Date dateRetour;
 	private double prix;
-	private int nbVoyageurs;
+	
 	
 	private Destination destination;
 	
@@ -38,8 +38,7 @@ public class DatesVoyagesBean implements Serializable {
 	public DatesVoyagesBean(Date dateDepart, Date dateRetour, double prix, int nbVoyageurs) {
 		this.dateDepart = dateDepart;
 		this.dateRetour = dateRetour;
-		this.prix = prix;
-		this.nbVoyageurs = nbVoyageurs;
+		this.prix = prix;		
 	}
 	
 	public String addDate(int id){
@@ -49,13 +48,13 @@ public class DatesVoyagesBean implements Serializable {
 	}
 	
 	public String add(){
-		DatesVoyages dv = new DatesVoyages(dateDepart, dateRetour, prix, nbVoyageurs);
+		DatesVoyages dv = new DatesVoyages(dateDepart, dateRetour, prix);
 		if(id != 0){
 			dv.setId(id);
 		}
 		destination.addDate(dv);
-//		service.saveOrUpdate(destination);
-		service.saveOrUpdate(dv);
+		service.saveOrUpdate(destination);
+//		service.saveOrUpdate(dv);
 //		stopConversation();
 		return "allDestinations?faces-redirect=true";
 	}
@@ -135,12 +134,6 @@ public class DatesVoyagesBean implements Serializable {
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-	public int getNbVoyageurs() {
-		return nbVoyageurs;
-	}
-	public void setNbVoyageurs(int nbVoyageurs) {
-		this.nbVoyageurs = nbVoyageurs;
-	}
-	
+		
 	
 }

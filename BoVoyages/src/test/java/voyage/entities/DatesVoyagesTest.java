@@ -21,7 +21,7 @@ public class DatesVoyagesTest {
 	public void testDatesVoyagesDateDateDoubleInt() {
 		Date depart = new Date();
 		Date retour = new Date();
-		DatesVoyages dv = new DatesVoyages(depart, retour, 101.5, 5);
+		DatesVoyages dv = new DatesVoyages(depart, retour, 101.5);
 		assertEquals(depart, dv.getDateDepart());
 		assertEquals(retour, dv.getDateRetour());
 
