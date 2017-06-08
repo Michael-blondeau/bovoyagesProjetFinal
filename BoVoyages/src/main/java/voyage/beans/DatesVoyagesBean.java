@@ -24,7 +24,6 @@ public class DatesVoyagesBean implements Serializable {
 	private Date dateRetour;
 	private double prix;
 	
-	
 	private Destination destination;
 	
 	@Inject
@@ -35,10 +34,11 @@ public class DatesVoyagesBean implements Serializable {
 	
 	public DatesVoyagesBean() {	}
 	
-	public DatesVoyagesBean(Date dateDepart, Date dateRetour, double prix, int nbVoyageurs) {
+	public DatesVoyagesBean(Date dateDepart, Date dateRetour, double prix, int nbVoyageurs, boolean promo) {
 		this.dateDepart = dateDepart;
 		this.dateRetour = dateRetour;
 		this.prix = prix;		
+
 	}
 	
 	public String addDate(int id){
@@ -49,6 +49,7 @@ public class DatesVoyagesBean implements Serializable {
 	
 	public String add(){
 		DatesVoyages dv = new DatesVoyages(dateDepart, dateRetour, prix);
+
 		if(id != 0){
 			dv.setId(id);
 		}
@@ -70,6 +71,7 @@ public class DatesVoyagesBean implements Serializable {
 					this.dateDepart = date.getDateDepart();
 					this.dateRetour = date.getDateRetour();
 					this.prix = date.getPrix();					
+
 				}
 			}
 			return "creationDateVoyage?faces-redirect=true";
@@ -134,6 +136,5 @@ public class DatesVoyagesBean implements Serializable {
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-		
 	
 }
