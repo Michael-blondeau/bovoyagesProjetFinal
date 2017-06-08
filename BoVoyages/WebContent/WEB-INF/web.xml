@@ -4,6 +4,28 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
 	<display-name>BoVoyages</display-name>
+	<welcome-file-list>
+    <welcome-file>/index.xhtml</welcome-file>
+  </welcome-file-list>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>admin_security</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/auth/login.xhtml</form-login-page>
+      <form-error-page>/auth/error.xhtml</form-error-page>
+    </form-login-config>
+  </login-config>
+  <security-role>
+    <role-name>admin</role-name>
+  </security-role>
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
