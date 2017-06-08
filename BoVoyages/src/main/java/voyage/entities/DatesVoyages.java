@@ -87,5 +87,4 @@ public class DatesVoyages implements Serializable {
 		this.prix = prix;
 	}
 
-		
 }

@@ -15,6 +15,7 @@ public class DatesVoyagesTest {
 		assertNull(dv.getDateRetour());
 		assertEquals(0, dv.getPrix(), 0.001);
 		assertEquals(0, dv.getId());
+		assertEquals(false, dv.isPromo());
 	}
 
 	@Test
@@ -22,11 +23,13 @@ public class DatesVoyagesTest {
 		Date depart = new Date();
 		Date retour = new Date();
 		DatesVoyages dv = new DatesVoyages(depart, retour, 101.5);
+
 		assertEquals(depart, dv.getDateDepart());
 		assertEquals(retour, dv.getDateRetour());
 
 		assertEquals(101.5, dv.getPrix(), 0.001);
 		assertEquals(0, dv.getId());
+		assertEquals(true, dv.isPromo());
 	}
 
 	@Test
