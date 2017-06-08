@@ -47,8 +47,7 @@ public class Destination implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="pk_destination")
-	private int id;
-	private String continent;
+	private int id;	
 	private String pays;
 	private String region;
 	private String description;
@@ -61,24 +60,14 @@ public class Destination implements Serializable {
 
 	public Destination() {}
 
-	public Destination(String continent, String pays, String region, String description) {
+	public Destination(String pays, String region, String description) {
 		super();
-		this.continent = continent;
+		
 		this.pays = pays;
 		this.region = region;
 		this.description = description;
 	}
 
-	public String getContinent() {
-		if (continent != null) {
-			return new String(continent);
-		}
-		return null;
-	}
-
-	public void setContinent(String continent) {
-		this.continent = continent;
-	}
 
 	public String getPays() {
 		if (pays != null) {
@@ -129,14 +118,16 @@ public class Destination implements Serializable {
 		this.dates = dates;
 	}
 
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((continent == null) ? 0 : continent.hashCode());
+		result = prime * result + ((dates == null) ? 0 : dates.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((pays == null) ? 0 : pays.hashCode());
+		result = prime * result + (promotion ? 1231 : 1237);
 		result = prime * result + ((region == null) ? 0 : region.hashCode());
 		return result;
 	}
@@ -150,10 +141,10 @@ public class Destination implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Destination other = (Destination) obj;
-		if (continent == null) {
-			if (other.continent != null)
+		if (dates == null) {
+			if (other.dates != null)
 				return false;
-		} else if (!continent.equals(other.continent))
+		} else if (!dates.equals(other.dates))
 			return false;
 		if (description == null) {
 			if (other.description != null)
@@ -166,6 +157,8 @@ public class Destination implements Serializable {
 			if (other.pays != null)
 				return false;
 		} else if (!pays.equals(other.pays))
+			return false;
+		if (promotion != other.promotion)
 			return false;
 		if (region == null) {
 			if (other.region != null)

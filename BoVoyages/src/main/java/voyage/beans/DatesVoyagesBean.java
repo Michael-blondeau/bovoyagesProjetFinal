@@ -70,8 +70,7 @@ public class DatesVoyagesBean implements Serializable {
 					this.id = idDate;
 					this.dateDepart = date.getDateDepart();
 					this.dateRetour = date.getDateRetour();
-					this.prix = date.getPrix();
-					this.nbVoyageurs = date.getNbVoyageurs();
+					this.prix = date.getPrix();					
 				}
 			}
 			return "creationDateVoyage?faces-redirect=true";
