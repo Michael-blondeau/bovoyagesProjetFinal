@@ -52,6 +52,7 @@ public class Destination implements Serializable {
 	private String pays;
 	private String region;
 	private String description;
+	private boolean promotion;
 	
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="fk_destination")
@@ -180,6 +181,14 @@ public class Destination implements Serializable {
 	
 	public void removeDate(DatesVoyages dv) {
 		dates.remove(dv);
+	}
+
+	public boolean isPromotion() {
+		return promotion;
+	}
+
+	public void setPromotion(boolean promotion) {
+		this.promotion = promotion;
 	}
 
 }
