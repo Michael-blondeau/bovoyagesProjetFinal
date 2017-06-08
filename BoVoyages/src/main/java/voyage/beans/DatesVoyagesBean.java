@@ -23,8 +23,6 @@ public class DatesVoyagesBean implements Serializable {
 	private Date dateDepart;
 	private Date dateRetour;
 	private double prix;
-	private int nbVoyageurs;
-	private boolean promo;
 	
 	private Destination destination;
 	
@@ -39,9 +37,8 @@ public class DatesVoyagesBean implements Serializable {
 	public DatesVoyagesBean(Date dateDepart, Date dateRetour, double prix, int nbVoyageurs, boolean promo) {
 		this.dateDepart = dateDepart;
 		this.dateRetour = dateRetour;
-		this.prix = prix;
-		this.nbVoyageurs = nbVoyageurs;
-		this.promo = promo;
+		this.prix = prix;		
+
 	}
 	
 	public String addDate(int id){
@@ -51,13 +48,14 @@ public class DatesVoyagesBean implements Serializable {
 	}
 	
 	public String add(){
-		DatesVoyages dv = new DatesVoyages(dateDepart, dateRetour, prix, nbVoyageurs, promo);
+		DatesVoyages dv = new DatesVoyages(dateDepart, dateRetour, prix);
+
 		if(id != 0){
 			dv.setId(id);
 		}
 		destination.addDate(dv);
-//		service.saveOrUpdate(destination);
-		service.saveOrUpdate(dv);
+		service.saveOrUpdate(destination);
+//		service.saveOrUpdate(dv);
 //		stopConversation();
 		return "allDestinations?faces-redirect=true";
 	}
@@ -72,9 +70,8 @@ public class DatesVoyagesBean implements Serializable {
 					this.id = idDate;
 					this.dateDepart = date.getDateDepart();
 					this.dateRetour = date.getDateRetour();
-					this.prix = date.getPrix();
-					this.nbVoyageurs = date.getNbVoyageurs();
-					this.promo = date.isPromo();
+					this.prix = date.getPrix();					
+
 				}
 			}
 			return "creationDateVoyage?faces-redirect=true";
@@ -139,20 +136,5 @@ public class DatesVoyagesBean implements Serializable {
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-	public int getNbVoyageurs() {
-		return nbVoyageurs;
-	}
-	public void setNbVoyageurs(int nbVoyageurs) {
-		this.nbVoyageurs = nbVoyageurs;
-	}
-
-	public boolean isPromo() {
-		return promo;
-	}
-
-	public void setPromo(boolean promo) {
-		this.promo = promo;
-	}
-	
 	
 }

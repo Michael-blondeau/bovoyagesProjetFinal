@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 25 Avril 2017 à 09:08
+-- GÃ©nÃ©rÃ© le: Mar 25 Avril 2017 Ã  09:08
 -- Version du serveur: 5.5.54-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.21
 
@@ -17,7 +17,7 @@ SET NAMES 'utf8';
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `bovoyage`
+-- Base de donnÃ©es: `bovoyage`
 --
 DROP DATABASE IF EXISTS `bovoyage`;
 CREATE DATABASE IF NOT EXISTS `bovoyage` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
@@ -31,14 +31,14 @@ USE `bovoyage`;
 
 DROP TABLE IF EXISTS `destinations`;
 CREATE TABLE IF NOT EXISTS `destinations` (
-  `pk_destination` int(11) NOT NULL AUTO_INCREMENT,
-  `continent` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `pays` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `region` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `description` text COLLATE utf8_unicode_ci NOT NULL,
-  CONSTRAINT pk_destination
-    PRIMARY KEY (`pk_destination`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6;
+  `pk_destination` int(11) NOT NULL AUTO_INCREMENT, 
+  `region` varchar(255) DEFAULT NULL, 
+  `pays` varchar(255) DEFAULT NULL,  
+  `description` varchar(255) DEFAULT NULL,  
+  `promotion` bit(1) NOT NULL,
+  
+  PRIMARY KEY (`pk_destination`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `destinations`
@@ -63,10 +63,10 @@ CREATE TABLE IF NOT EXISTS `dates_voyages` (
   `date_depart` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_retour` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `prixHT` double NOT NULL DEFAULT '0',
-  `nb_voyageurs` int(11) NOT NULL DEFAULT '0',
   `fk_destination` int(11) NOT NULL DEFAULT '0',
-  CONSTRAINT pk_date_voyage 
-    PRIMARY KEY (`pk_date_voyage`) 
+ PRIMARY KEY (`pk_date_voyage`),
+  KEY `FKtp66myrd7xxmkxot7agqra4nq` (`fk_destination`),
+  CONSTRAINT `FKtp66myrd7xxmkxot7agqra4nq` FOREIGN KEY (`fk_destination`) REFERENCES `destinations` (`pk_destination`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
 
 --

@@ -39,7 +39,7 @@ public class DestinationBean implements Serializable {
 	}
 	
 	public String add(){
-		Destination destination = new Destination(continent, pays, region, description);
+		Destination destination = new Destination(pays, region, description);
 		service.saveOrUpdate(destination);
 		stopConversation();
 		return "allDestinations?faces-redirect=true";
@@ -48,8 +48,7 @@ public class DestinationBean implements Serializable {
 	public String modifier(int id){
 		startConversation();
 		Destination d = service.getDestinationById(id);
-		this.id = d.getId();
-		this.continent = d.getContinent();
+		this.id = d.getId();		
 		this.pays = d.getPays();
 		this.region = d.getRegion();
 		this.description = d.getDescription();

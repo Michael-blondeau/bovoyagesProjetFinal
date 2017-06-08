@@ -37,10 +37,7 @@
 								<f:convertNumber currencyCode="EUR"/>
 							</h:outputText>
 							
-						</p:column>
-						<p:column headerText="Nombre de voyageurs">
-							<h:outputText value="#{d.nbVoyageurs}"/>
-						</p:column>
+						</p:column>				
 
 						<p:column>
 							<h:form>
@@ -54,7 +51,7 @@
 						</p:column>
 					</p:dataTable>
 				</p:panel>
-				<p:button value="Retour" onclick="window.history.back();"></p:button>
+				<p:commandButton value="Retour" action="allDestinations?faces-redirect=true"/>
 			</f:view>
 		</ui:define>
 

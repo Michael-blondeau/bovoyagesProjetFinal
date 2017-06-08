@@ -50,8 +50,7 @@ public class DestinationFullBean implements Serializable {
 		startConversation();
 		
 		Destination d = service.getDestinationById(id);
-		this.id = d.getId();
-		this.continent = d.getContinent();
+		this.id = d.getId();		
 		this.pays = d.getPays();
 		this.region = d.getRegion();
 		this.description = d.getDescription();
