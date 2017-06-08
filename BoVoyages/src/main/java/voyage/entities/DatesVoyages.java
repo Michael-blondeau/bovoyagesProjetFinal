@@ -44,23 +44,15 @@ public class DatesVoyages implements Serializable {
 	private Date dateRetour;
 	
 	@Column(name="prixHT")
-	private double prix;
+	private double prix;	
 	
-	@Column(name="nb_voyageurs")
-	private int nbVoyageurs;
-	
-	@Column(name="promo")
-	private boolean promo;
-
 	public DatesVoyages() {	}
 
-	public DatesVoyages(Date dateDepart, Date dateRetour, double prix, int nbVoyageurs, boolean promo) {
-		super();
+	public DatesVoyages(Date dateDepart, Date dateRetour, double prix) {
+		
 		this.dateDepart = dateDepart;
 		this.dateRetour = dateRetour;
-		this.prix = prix;
-		this.nbVoyageurs = nbVoyageurs;
-		this.promo = promo;
+		this.prix = prix;		
 	}
 
 	public int getId() {
@@ -95,21 +87,4 @@ public class DatesVoyages implements Serializable {
 		this.prix = prix;
 	}
 
-	public int getNbVoyageurs() {
-		return nbVoyageurs;
-	}
-
-	public void setNbVoyageurs(int nbVoyageurs) {
-		this.nbVoyageurs = nbVoyageurs;
-	}
-
-	public boolean isPromo() {
-		return promo;
-	}
-
-	public void setPromo(boolean promo) {
-		this.promo = promo;
-	}
-
-	
 }

@@ -13,7 +13,6 @@ public class DatesVoyagesTest {
 		DatesVoyages dv = new DatesVoyages();
 		assertNull(dv.getDateDepart());
 		assertNull(dv.getDateRetour());
-		assertEquals(0, dv.getNbVoyageurs());
 		assertEquals(0, dv.getPrix(), 0.001);
 		assertEquals(0, dv.getId());
 		assertEquals(false, dv.isPromo());
@@ -23,10 +22,11 @@ public class DatesVoyagesTest {
 	public void testDatesVoyagesDateDateDoubleInt() {
 		Date depart = new Date();
 		Date retour = new Date();
-		DatesVoyages dv = new DatesVoyages(depart, retour, 101.5, 5, true);
+		DatesVoyages dv = new DatesVoyages(depart, retour, 101.5);
+
 		assertEquals(depart, dv.getDateDepart());
 		assertEquals(retour, dv.getDateRetour());
-		assertEquals(5, dv.getNbVoyageurs());
+
 		assertEquals(101.5, dv.getPrix(), 0.001);
 		assertEquals(0, dv.getId());
 		assertEquals(true, dv.isPromo());
@@ -62,11 +62,5 @@ public class DatesVoyagesTest {
 		assertEquals(4521.6, dv.getPrix(), 0.001);
 	}
 
-	@Test
-	public void testNbVoyageurs() {
-		DatesVoyages dv = new DatesVoyages();
-		dv.setNbVoyageurs(7);
-		assertEquals(7, dv.getNbVoyageurs());
-	}
-
+	
 }
