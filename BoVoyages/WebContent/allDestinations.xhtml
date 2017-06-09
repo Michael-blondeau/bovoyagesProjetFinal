@@ -24,9 +24,7 @@
 						<c:forEach items="#{service.allDestinations}" var="d">						
 							<div class="ui-g">
 							<div class="ui-g-3" style="text-align:left;">
-							<c:forEach items="${imagesPath}" var="path">
-		<span><img src="images/${path.fileName }" width="150" /></span>
-	</c:forEach>
+							<p:fileDownload value=""></p:fileDownload>
 				
 							 </div>
 								<div class="ui-g-7">
