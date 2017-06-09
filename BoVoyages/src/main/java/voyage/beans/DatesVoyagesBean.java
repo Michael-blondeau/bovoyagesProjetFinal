@@ -48,15 +48,15 @@ public class DatesVoyagesBean implements Serializable {
 	}
 	
 	public String add(){
+		startConversation();
 		DatesVoyages dv = new DatesVoyages(dateDepart, dateRetour, prix);
-
 		if(id != 0){
 			dv.setId(id);
 		}
+		service.saveOrUpdate(dv);
 		destination.addDate(dv);
 		service.saveOrUpdate(destination);
-//		service.saveOrUpdate(dv);
-//		stopConversation();
+		stopConversation();
 		return "allDestinations?faces-redirect=true";
 	}
 	

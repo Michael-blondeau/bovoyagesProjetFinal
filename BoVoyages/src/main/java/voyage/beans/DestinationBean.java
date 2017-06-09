@@ -43,6 +43,7 @@ public class DestinationBean implements Serializable {
 		if(id!=0){
 			destination.setId(id);
 		}
+	
 		service.saveOrUpdate(destination);
 		stopConversation();
 		return "allDestinations?faces-redirect=true";
