@@ -24,7 +24,7 @@ public class VoyageService {
 	public Destination[] getDestinationPromo(){
 		
 		List<Destination> liste = em.createNamedQuery("promotion").setParameter("b", true).getResultList();
-		return liste.toArray(new Destination[liste.size()]);
+		return liste.toArray(new Destination[0]);
 		
 	}
 }
