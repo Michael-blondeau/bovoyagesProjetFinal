@@ -50,7 +50,8 @@ public class DestinationBean implements Serializable {
 		stopConversation();
 		return "allDestinations?faces-redirect=true";
   }
-
+	
+	
 	public String modifier(int id){
 		startConversation();
 		Destination d = service.getDestinationById(id);
@@ -60,7 +61,7 @@ public class DestinationBean implements Serializable {
 		this.region = d.getRegion();
 		this.description = d.getDescription();
 		this.promotion = d.isPromotion();
-		return "creationDestination?faces-redirect=true";
+		return "modificationDestination?faces-redirect=true";
 	}
 
 	public void startConversation(){
