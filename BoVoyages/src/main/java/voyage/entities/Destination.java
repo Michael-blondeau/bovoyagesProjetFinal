@@ -38,7 +38,8 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(name = "allDestinations", query = "SELECT d FROM Destination d"),
 	@NamedQuery(name = "destinationByPays", query="SELECT d FROM Destination d WHERE d.pays = :p"),
-	@NamedQuery(name = "allUniquePays",  query="SELECT DISTINCT d.pays FROM Destination d")
+	@NamedQuery(name = "allUniquePays",  query="SELECT DISTINCT d.pays FROM Destination d"),
+	@NamedQuery(name="promotion", query="SELECT d from Destination d WHERE d.promotion= :b")
 })
 public class Destination implements Serializable {
 

@@ -79,7 +79,7 @@ public class DatesVoyagesBean implements Serializable {
 
 				}
 			}
-			return "creationDateVoyage?faces-redirect=true";
+			return "modificationDateVoyage?faces-redirect=true";
 		}
 		return null;
 	}

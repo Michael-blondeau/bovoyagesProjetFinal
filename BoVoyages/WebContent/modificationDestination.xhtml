@@ -19,7 +19,7 @@
 				<p:panel id="creation">
 					<h:form>
 						<p:panelGrid columns="2" style="margin: auto;">
-							<f:facet name="header">Créer une destination</f:facet>						
+							<f:facet name="header">Modification  d'une destination</f:facet>						
 				
 							<h:outputLabel for="continent" value="Continent :" />
 							<p:inputText id="continent" value="#{destination.continent }" label="continent" placeholder="Continent" />
@@ -45,7 +45,7 @@
 							<f:facet name="footer">
 								<p:commandButton value="Créer" icon="ui-icon-check"
 									style="margin:0" action="#{destination.add}" />
-								<p:commandButton value="Annuler" onclick="window.history.back()" />
+								<p:commandButton value="Annuler" onclick="window.history.back()"/>
 							</f:facet>
 							
 						</p:panelGrid>
