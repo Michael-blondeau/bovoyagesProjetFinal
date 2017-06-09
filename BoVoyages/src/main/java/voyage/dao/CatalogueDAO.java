@@ -22,7 +22,7 @@ import voyage.entities.Destination;
 import voyage.exceptions.DAOException;
 
 /**
- * Implémentation de l'interface {@link ICatalogueDAO}.
+ * ImplÃ©mentation de l'interface {@link ICatalogueDAO}.
  * 
  * @author Adminl
  * @version 2.0
@@ -51,7 +51,7 @@ public class CatalogueDAO implements ICatalogueDAO, Serializable {
 				em.persist(destination);
 			} else {
 				em.merge(destination);
-				LOG.info("La destination existe déjà ! Mise à jour de la destination correspondate.");
+				LOG.info("La destination existe dÃ©jÃ  ! Mise Ã  jour de la destination correspondate.");
 			}
 			ut.commit();
 		} catch (NotSupportedException | SystemException | SecurityException | IllegalStateException | RollbackException
@@ -59,6 +59,9 @@ public class CatalogueDAO implements ICatalogueDAO, Serializable {
 			throw new DAOException("Erreur lors de l'enregistrement de la destination", e);
 		}
 	}
+	
+	
+	
 	
 	@Override
 	public void saveOrUpdate(DatesVoyages date) throws DAOException {
@@ -68,7 +71,7 @@ public class CatalogueDAO implements ICatalogueDAO, Serializable {
 				em.persist(date);
 			} else {
 				em.merge(date);
-				LOG.info("La date pour cette destination existe déjà ! Mise à jour de la date correspondate.");
+				LOG.info("La date pour cette destination existe dÃ©jÃ  ! Mise Ã  jour de la date correspondate.");
 			}
 			ut.commit();
 		} catch (SecurityException | IllegalStateException | NotSupportedException | SystemException | RollbackException
