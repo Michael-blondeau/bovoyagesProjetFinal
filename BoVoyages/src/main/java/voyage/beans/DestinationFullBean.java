@@ -28,32 +28,36 @@ public class DestinationFullBean implements Serializable {
 	Conversation conversation;
 
 	private int id;
-	private String continent;
 	private String pays;
+	private String continent; 
 	private String region;
 	private String description;
+	private boolean promotion;
 	
 	private List<DatesVoyages> dates;
 
 	public DestinationFullBean() {
 	}
 
-	public DestinationFullBean(int id, String continent, String pays, String region, String description) {
+	public DestinationFullBean(int id, String continent, String pays, String region, String description, boolean promotion) {
 		this.id = id;
 		this.continent = continent;
 		this.pays = pays;
 		this.region = region;
 		this.description = description;
+		this.promotion = promotion;
 	}
 	
 	public String viewDates(int id) {
 		startConversation();
 		
 		Destination d = service.getDestinationById(id);
-		this.id = d.getId();		
+		this.id = d.getId();
+		this.continent = d.getContinent();
 		this.pays = d.getPays();
 		this.region = d.getRegion();
 		this.description = d.getDescription();
+		this.promotion = d.isPromotion();
 		this.dates = d.getDates();
 		
 		return "viewDates?faces-redirect=true";
@@ -117,6 +121,14 @@ public class DestinationFullBean implements Serializable {
 
 	public void setDates(List<DatesVoyages> dates) {
 		this.dates = dates;
+	}
+
+	public boolean isPromotion() {
+		return promotion;
+	}
+
+	public void setPromotion(boolean promotion) {
+		this.promotion = promotion;
 	}
 
 }

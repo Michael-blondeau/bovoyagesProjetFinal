@@ -26,20 +26,22 @@ public class DestinationBean implements Serializable {
 	private String pays;
 	private String region;
 	private String description;
+	private boolean promotion;
 
 	public DestinationBean() {
 	}
 
-	public DestinationBean(int id, String continent, String pays, String region, String description) {
+	public DestinationBean(int id, String continent, String pays, String region, String description, boolean promotion) {
 		this.id = id;
 		this.continent = continent;
 		this.pays = pays;
 		this.region = region;
 		this.description = description;
+		this.promotion = promotion;
 	}
 	
 	public String add(){
-		Destination destination = new Destination(pays, region, description);
+		Destination destination = new Destination(continent, pays, region, description, promotion);
 		if(id!=0){
 			destination.setId(id);
 		}
@@ -52,10 +54,12 @@ public class DestinationBean implements Serializable {
 	public String modifier(int id){
 		startConversation();
 		Destination d = service.getDestinationById(id);
-		this.id = d.getId();		
+		this.id = d.getId();	
+		this.continent = d.getContinent();
 		this.pays = d.getPays();
 		this.region = d.getRegion();
 		this.description = d.getDescription();
+		this.promotion = d.isPromotion();
 		return "creationDestination?faces-redirect=true";
 	}
 
@@ -116,6 +120,14 @@ public class DestinationBean implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public boolean isPromotion() {
+		return promotion;
+	}
+
+	public void setPromotion(boolean promotion) {
+		this.promotion = promotion;
 	}
 
 }

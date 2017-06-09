@@ -46,13 +46,17 @@ public class DatesVoyages implements Serializable {
 	@Column(name="prixHT")
 	private double prix;	
 	
+	@Column(name="nb_voyageurs")
+	private int nbVoyageurs;
+	
 	public DatesVoyages() {	}
 
-	public DatesVoyages(Date dateDepart, Date dateRetour, double prix) {
+	public DatesVoyages(Date dateDepart, Date dateRetour, double prix, int nbVoyageurs) {
 		
 		this.dateDepart = dateDepart;
 		this.dateRetour = dateRetour;
-		this.prix = prix;		
+		this.prix = prix;	
+		this.nbVoyageurs = nbVoyageurs;
 	}
 
 	public int getId() {
@@ -85,6 +89,14 @@ public class DatesVoyages implements Serializable {
 
 	public void setPrix(double prix) {
 		this.prix = prix;
+	}
+
+	public int getNbVoyageurs() {
+		return nbVoyageurs;
+	}
+
+	public void setNbVoyageurs(int nbVoyageurs) {
+		this.nbVoyageurs = nbVoyageurs;
 	}
 
 }

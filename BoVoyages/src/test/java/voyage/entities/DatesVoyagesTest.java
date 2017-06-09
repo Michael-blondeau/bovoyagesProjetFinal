@@ -15,13 +15,14 @@ public class DatesVoyagesTest {
 		assertNull(dv.getDateRetour());
 		assertEquals(0, dv.getPrix(), 0.001);
 		assertEquals(0, dv.getId());
+		assertEquals(0, dv.getNbVoyageurs(),1 );
 	}
 
 	@Test
 	public void testDatesVoyagesDateDateDoubleInt() {
 		Date depart = new Date();
 		Date retour = new Date();
-		DatesVoyages dv = new DatesVoyages(depart, retour, 101.5);
+		DatesVoyages dv = new DatesVoyages(depart, retour, 101.5, 5);
 
 		assertEquals(depart, dv.getDateDepart());
 		assertEquals(retour, dv.getDateRetour());
@@ -59,5 +60,11 @@ public class DatesVoyagesTest {
 		assertEquals(4521.6, dv.getPrix(), 0.001);
 	}
 
-	
+	@Test
+	public void testNbVoyageurs(){
+		DatesVoyages dv = new DatesVoyages();
+		dv.setNbVoyageurs(10);
+		assertEquals(0, dv.getNbVoyageurs(), 10);
+		
+	}
 }

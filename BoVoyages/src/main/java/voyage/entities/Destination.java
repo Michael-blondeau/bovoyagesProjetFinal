@@ -49,6 +49,7 @@ public class Destination implements Serializable {
 	@Column(name="pk_destination")
 	private int id;	
 	private String pays;
+	private String continent; 
 	private String region;
 	private String description;
 	private boolean promotion;
@@ -60,12 +61,14 @@ public class Destination implements Serializable {
 
 	public Destination() {}
 
-	public Destination(String pays, String region, String description) {
+	public Destination(String continent, String pays, String region, String description, boolean promotion) {
 		super();
 		
 		this.pays = pays;
+		this.continent = continent;
 		this.region = region;
 		this.description = description;
+		this.promotion = promotion;
 	}
 
 
@@ -182,6 +185,14 @@ public class Destination implements Serializable {
 
 	public void setPromotion(boolean promotion) {
 		this.promotion = promotion;
+	}
+
+	public String getContinent() {
+		return continent;
+	}
+
+	public void setContinent(String continent) {
+		this.continent = continent;
 	}
 
 }
