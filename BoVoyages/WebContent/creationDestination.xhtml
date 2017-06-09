@@ -19,9 +19,11 @@
 				<p:panel id="creation">
 					<h:form>
 						<p:panelGrid columns="2" style="margin: auto;">
-							<f:facet name="header">Créer une destination</f:facet>
-							
-												
+							<f:facet name="header">Créer une destination</f:facet>						
+				
+							<h:outputLabel for="continent" value="Continent :" />
+							<p:inputText id="pays" value="#{destination.continent }" label="continent" placeholder="Continent" />
+				
 							<h:outputLabel for="pays" value="Pays :" />
 							<p:inputText id="pays" value="#{destination.pays }" label="pays" placeholder="Pays" />
 							
@@ -32,7 +34,14 @@
 							<h:outputLabel for="description" value="Description :" />
 							<p:inputTextarea id="description" label="description"
 								value="#{destination.description }" rows="6" cols="33" />
-								<h:inputHidden value="#{destination.id}"/>		
+								<h:inputHidden value="#{destination.id}"/>
+								
+							<h:outputLabel for="promo" value="Promotion :" />	
+							<h:selectOneRadio id="promo" value="#{destination.promotion}">
+							   	<f:selectItem itemValue="oui" itemLabel="Oui" />
+							   	<f:selectItem itemValue="non" itemLabel="Non" />
+							</h:selectOneRadio>	
+										
 							<f:facet name="footer">
 								<p:commandButton value="Créer" icon="ui-icon-check"
 									style="margin:0" action="#{destination.add}" />
