@@ -23,10 +23,16 @@
 
 						<c:forEach items="#{service.allDestinations}" var="d">						
 							<div class="ui-g">
-								<div class="ui-g-9">
+							<div class="ui-g-3" style="text-align:left;">
+							<c:forEach items="${imagesPath}" var="path">
+		<span><img src="images/${path.fileName }" width="150" /></span>
+	</c:forEach>
+				
+							 </div>
+								<div class="ui-g-7">
 									<h:outputText styleClass="destinationTitre" value="#{d.region}" />
 								</div>
-								<div class="ui-g-3" style="text-align: right;">
+								<div class="ui-g-2" style="text-align: right;">
 									<p:menuButton value="Options" >
 										<p:menuitem value="Modifier" icon="ui-icon-arrowrefresh-1-w" action="#{destination.modifier(d.id)}" ajax="false"/>
 										<p:menuitem value="Supprimer" icon="ui-icon-trash" action="#{service.deleteDestination(d.id)}" update="destinations"/>
@@ -35,7 +41,7 @@
 										<p:menuitem value="Ajouter une date" icon="ui-icon-extlink" action="#{date.addDate(d.id)}" ajax="false"/>
 									</p:menuButton>
 								</div>
-								<div class="ui-g-12">
+								<div class="ui-g-9">
 									<h:outputText value="#{d.description}" />
 								</div>
 							</div>
