@@ -14,6 +14,7 @@ header{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     height: 310px;
+    whidth: 100%;
     position: relative;
 /*     padding-top: 20px; */
 }
