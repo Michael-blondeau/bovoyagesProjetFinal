@@ -17,11 +17,15 @@
 		<f:view>
 			<header>
 				<div class="t-align-r">
-					<h:graphicImage value="resources/images/avatar.jpg" alt="Image" width="100" height="100"/>
+					<h:graphicImage value="resources/images/avatar.jpg" alt="Image"
+						width="100" height="100" />
 					<div class="pull-r">
 						<div class="identite">John Doe</div>
 						<div>Commercial 9</div>
 					</div>
+					<h:form>
+						<p:commandButton value="Déconnection" action="#{DeconnectionBean.disconnect}" />
+					</h:form>
 				</div>
 			</header>
 		</f:view>
