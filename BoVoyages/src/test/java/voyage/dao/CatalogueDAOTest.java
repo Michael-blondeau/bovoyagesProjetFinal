@@ -17,7 +17,7 @@ public class CatalogueDAOTest {
 	@Test
 	public void testCreate() throws DAOException {
 		CatalogueDAO catalogueDAO = new CatalogueDAO();
-		Destination destination = new Destination("Pays", "Region", "Description longue", "Continent", false);
+		Destination destination = new Destination("Pays", "Region", "Description longue", "Continent", false,"");
 		catalogueDAO.saveOrUpdate(destination);
 		assertNotEquals(0, destination.getId());
 		catalogueDAO.delete(destination);
@@ -26,7 +26,7 @@ public class CatalogueDAOTest {
 	@Test
 	public void testUpdate() throws DAOException {
 		CatalogueDAO catalogueDAO = new CatalogueDAO();
-		Destination destination = new Destination( "Pays", "Region", "Description longue", "Continent", false);
+		Destination destination = new Destination( "Pays", "Region", "Description longue", "Continent", false,"");
 		catalogueDAO.saveOrUpdate(destination);
 		destination.setPays("France");
 		catalogueDAO.update(destination);
@@ -38,7 +38,7 @@ public class CatalogueDAOTest {
 	@Test
 	public void testDelete() throws DAOException {
 		CatalogueDAO catalogueDAO = new CatalogueDAO();
-		Destination destination = new Destination("Pays", "Region", "Description longue", "Continent", false);
+		Destination destination = new Destination("Pays", "Region", "Description longue", "Continent", false,"");
 		catalogueDAO.saveOrUpdate(destination);
 		catalogueDAO.delete(destination);
 		assertEquals(0, destination.getId());
@@ -54,7 +54,7 @@ public class CatalogueDAOTest {
 		}
 		List<Destination> destinations = new ArrayList<>();
 		for (int i = 0; i < 10; ++i) {
-			destinations.add(new Destination("Pays", "Region", "Description longue", "Continent", false));
+			destinations.add(new Destination("Pays", "Region", "Description longue", "Continent", false,""));
 			catalogueDAO.saveOrUpdate(destinations.get(i));
 		}
 		assertEquals(10, catalogueDAO.getAllDestinations().size());
@@ -71,9 +71,9 @@ public class CatalogueDAOTest {
 		for (Destination d : destinations) {
 			catalogueDAO.delete(d);
 		}
-		Destination d1 = new Destination("Pays1", "Region", "Description longue", "Continent", false);
-		Destination d2 = new Destination("Pays2", "Region", "Description longue", "Continent", false);
-		Destination d3 = new Destination("Pays3", "Region", "Description longue", "Continent", false);
+		Destination d1 = new Destination("Pays1", "Region", "Description longue", "Continent", false,"");
+		Destination d2 = new Destination("Pays2", "Region", "Description longue", "Continent", false,"");
+		Destination d3 = new Destination("Pays3", "Region", "Description longue", "Continent", false,"");
 		catalogueDAO.saveOrUpdate(d1);
 		catalogueDAO.saveOrUpdate(d2);
 		catalogueDAO.saveOrUpdate(d3);
@@ -88,7 +88,7 @@ public class CatalogueDAOTest {
 
 	@Test
 	public void testGetDestinationById() throws DAOException {
-		Destination destination = new Destination("Pays", "Region", "Description longue", "Continent", false);
+		Destination destination = new Destination("Pays", "Region", "Description longue", "Continent", false,"");
 		CatalogueDAO catalogueDAO = new CatalogueDAO();
 		catalogueDAO.saveOrUpdate(destination);
 		int id = destination.getId();
@@ -104,9 +104,9 @@ public class CatalogueDAOTest {
 		for (Destination d : destinations) {
 			catalogueDAO.delete(d);
 		}
-		Destination d1 = new Destination("Pays1", "Region", "Description longue", "Continent", false);
-		Destination d2 = new Destination("Pays2", "Region", "Description longue", "Continent", false);
-		Destination d3 = new Destination("Pays3", "Region", "Description longue", "Continent", false);
+		Destination d1 = new Destination("Pays1", "Region", "Description longue", "Continent", false,"");
+		Destination d2 = new Destination("Pays2", "Region", "Description longue", "Continent", false,"");
+		Destination d3 = new Destination("Pays3", "Region", "Description longue", "Continent", false,"");
 		catalogueDAO.saveOrUpdate(d1);
 		catalogueDAO.saveOrUpdate(d2);
 		catalogueDAO.saveOrUpdate(d3);

@@ -17,13 +17,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * <b>Destination est une classe représentant la destination d'un voyage.</b>
+ * <b>Destination est une classe reprÃ©sentant la destination d'un voyage.</b>
  * <p>
- * Une destination est caractérisée par :
+ * Une destination est caractÃ©risÃ©e par :
  * <ul>
  * <li>Un continent</li>
  * <li>Un pays</li>
- * <li>Une région</li>
+ * <li>Une rÃ©gion</li>
  * <li>Une description</li>
  * </ul>
  * <p>
@@ -54,6 +54,7 @@ public class Destination implements Serializable {
 	private String region;
 	private String description;
 	private boolean promotion;
+	private String image;
 	
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="fk_destination")
@@ -62,16 +63,17 @@ public class Destination implements Serializable {
 
 	public Destination() {}
 
-	public Destination(String continent, String pays, String region, String description, boolean promotion) {
-		super();
-		
+	public Destination(String continent, String pays, String region, String description, boolean promotion, String image) {
+				
 		this.pays = pays;
 		this.continent = continent;
 		this.region = region;
 		this.description = description;
 		this.promotion = promotion;
+		this.image = image;
 	}
 
+	
 
 	public String getPays() {
 		if (pays != null) {
@@ -122,14 +124,17 @@ public class Destination implements Serializable {
 		this.dates = dates;
 	}
 
-	
+		
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((continent == null) ? 0 : continent.hashCode());
 		result = prime * result + ((dates == null) ? 0 : dates.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
+		result = prime * result + ((image == null) ? 0 : image.hashCode());
 		result = prime * result + ((pays == null) ? 0 : pays.hashCode());
 		result = prime * result + (promotion ? 1231 : 1237);
 		result = prime * result + ((region == null) ? 0 : region.hashCode());
@@ -145,6 +150,11 @@ public class Destination implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Destination other = (Destination) obj;
+		if (continent == null) {
+			if (other.continent != null)
+				return false;
+		} else if (!continent.equals(other.continent))
+			return false;
 		if (dates == null) {
 			if (other.dates != null)
 				return false;
@@ -156,6 +166,11 @@ public class Destination implements Serializable {
 		} else if (!description.equals(other.description))
 			return false;
 		if (id != other.id)
+			return false;
+		if (image == null) {
+			if (other.image != null)
+				return false;
+		} else if (!image.equals(other.image))
 			return false;
 		if (pays == null) {
 			if (other.pays != null)
@@ -194,6 +209,14 @@ public class Destination implements Serializable {
 
 	public void setContinent(String continent) {
 		this.continent = continent;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }
