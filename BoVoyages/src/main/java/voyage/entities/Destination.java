@@ -63,8 +63,10 @@ public class Destination implements Serializable {
 
 	public Destination() {}
 
-	public Destination(String continent, String pays, String region, String description, boolean promotion, String image) {
-				
+
+	public Destination(String continent, String pays, String region, String description, String image, boolean promotion) {
+		super();
+	
 		this.pays = pays;
 		this.continent = continent;
 		this.region = region;
@@ -123,8 +125,6 @@ public class Destination implements Serializable {
 	public void setDates(List<DatesVoyages> dates) {
 		this.dates = dates;
 	}
-
-		
 
 	@Override
 	public int hashCode() {

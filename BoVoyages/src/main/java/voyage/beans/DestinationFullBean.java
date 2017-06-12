@@ -60,6 +60,7 @@ public class DestinationFullBean implements Serializable {
 		this.region = d.getRegion();
 		this.description = d.getDescription();
 		this.promotion = d.isPromotion();
+		this.image = d.getImage();
 		this.dates = d.getDates();
 		this.image = d.getImage();
 		

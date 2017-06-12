@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet Filter implementation class ImageFilter
  */
 @WebFilter(dispatcherTypes = {DispatcherType.REQUEST }
-					, urlPatterns = {"/images/*"})
+					, urlPatterns = {"/imagesBDD/*"})
 public class ImageFilter implements Filter {
 	private String folder;
 	private final static Logger LOGGER = Logger.getLogger(ImageFilter.class.getCanonicalName());
