@@ -42,10 +42,11 @@
 								<f:selectItem itemValue="TRUE" itemLabel="Oui" />
 								<f:selectItem itemValue="FALSE" itemLabel="Non" />
 							</h:selectOneRadio>
-							<p:fileUpload value="#{fileUploadManagedBean.file}" mode="simple"></p:fileUpload>
+							<p:fileUpload  mode="simple" actionListener="#{destination.file}"></p:fileUpload>
+							<p:commandButton value="Submit" ajax="false" action="#{destination.submit}"/>
+							
 							<p:separator />
-							<h:commandButton value="Submit"
-								action="#{fileUploadManagedBean.upload}"></h:commandButton>
+							
 							<h:inputHidden value="#{destination.id}" />
 
 							<f:facet name="footer">

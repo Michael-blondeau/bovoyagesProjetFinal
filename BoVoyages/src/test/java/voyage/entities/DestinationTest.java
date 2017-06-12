@@ -21,12 +21,13 @@ public class DestinationTest {
 
 	@Test
 	public void testDestinationStringStringStringString() {
-		Destination dest = new Destination("Continent","Pays", "Region", "Description", true);
+		Destination dest = new Destination("Continent","Pays", "Region", "Description","Image", true);
 
 		assertEquals("Continent", dest.getContinent());
 		assertEquals("Pays", dest.getPays());
 		assertEquals("Region", dest.getRegion());
 		assertEquals("Description", dest.getDescription());
+		assertEquals("Image", dest.getImage());
 		assertEquals(true, dest.isPromotion());
 		assertEquals(0, dest.getId());
 	}
@@ -60,9 +61,10 @@ public class DestinationTest {
 	}
 
 	@Test
-	public void testGetContienent() {
+	public void testGetContinent() {
 		Destination dest = new Destination();
 		dest.setContinent("Continent");
 		assertEquals("Continent", dest.getContinent());
 	}
+	
 }
