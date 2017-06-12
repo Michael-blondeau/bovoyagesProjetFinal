@@ -43,11 +43,6 @@ public class DestinationBean implements Serializable {
 	private boolean promotion;
 	private String image;
 	private UploadedFile file;
-	
-	
-	
-
-	
 
 	public DestinationBean() {
 	}
@@ -82,7 +77,8 @@ public class DestinationBean implements Serializable {
 		stopConversation();
 		return "allDestinations?faces-redirect=true";
   }
-
+	
+	
 	public String modifier(int id){
 		startConversation();
 		Destination d = service.getDestinationById(id);
@@ -95,6 +91,7 @@ public class DestinationBean implements Serializable {
 		this.image = d.getImage();
 		return "creationDestination?faces-redirect=true";
 	}
+  
 	public void submit() throws IOException{ 
 		if(file!=null){
 		String folder = FacesContext.getCurrentInstance().getExternalContext().getInitParameter("upload-folder");
@@ -198,5 +195,4 @@ public class DestinationBean implements Serializable {
 	public void setFile(UploadedFile file) {
 		this.file = file;
 	}
-	
 }

@@ -17,13 +17,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * <b>Destination est une classe représentant la destination d'un voyage.</b>
+ * <b>Destination est une classe reprÃ©sentant la destination d'un voyage.</b>
  * <p>
- * Une destination est caractérisée par :
+ * Une destination est caractÃ©risÃ©e par :
  * <ul>
  * <li>Un continent</li>
  * <li>Un pays</li>
- * <li>Une région</li>
+ * <li>Une rÃ©gion</li>
  * <li>Une description</li>
  * </ul>
  * <p>
@@ -38,7 +38,8 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(name = "allDestinations", query = "SELECT d FROM Destination d"),
 	@NamedQuery(name = "destinationByPays", query="SELECT d FROM Destination d WHERE d.pays = :p"),
-	@NamedQuery(name = "allUniquePays",  query="SELECT DISTINCT d.pays FROM Destination d")
+	@NamedQuery(name = "allUniquePays",  query="SELECT DISTINCT d.pays FROM Destination d"),
+	@NamedQuery(name="promotion", query="SELECT d from Destination d WHERE d.promotion= :b")
 })
 public class Destination implements Serializable {
 
@@ -62,9 +63,10 @@ public class Destination implements Serializable {
 
 	public Destination() {}
 
+
 	public Destination(String continent, String pays, String region, String description, String image, boolean promotion) {
 		super();
-		
+	
 		this.pays = pays;
 		this.continent = continent;
 		this.region = region;
@@ -73,6 +75,7 @@ public class Destination implements Serializable {
 		this.image = image;
 	}
 
+	
 
 	public String getPays() {
 		if (pays != null) {
@@ -122,9 +125,6 @@ public class Destination implements Serializable {
 	public void setDates(List<DatesVoyages> dates) {
 		this.dates = dates;
 	}
-
-	
-	
 
 	@Override
 	public int hashCode() {

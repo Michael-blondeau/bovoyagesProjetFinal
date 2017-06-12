@@ -62,6 +62,7 @@ public class DestinationFullBean implements Serializable {
 		this.promotion = d.isPromotion();
 		this.image = d.getImage();
 		this.dates = d.getDates();
+		this.image = d.getImage();
 		
 		return "viewDates?faces-redirect=true";
     }

@@ -8,15 +8,30 @@ body{
 }
 
 header{
-	background: linear-gradient(to right, rgb(0, 107, 179), rgb(230, 247, 255));
+/* 	background: linear-gradient(to right, rgb(0, 107, 179), rgb(230, 247, 255)); */
+	background-image: url("../resources/images/banniere2.png") ;
+	background-repeat:no-repeat;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    height: 150px;
+    height: 310px;
+    whidth: 100%;
+    position: relative;
 /*     padding-top: 20px; */
 }
 
 .t-align-r{
 	text-align: right;
+}
+
+.logo{
+	position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+.pad-t-r{
+	padding-top: 10px;
+    padding-right: 10px;
 }
 
 .pull-r{
