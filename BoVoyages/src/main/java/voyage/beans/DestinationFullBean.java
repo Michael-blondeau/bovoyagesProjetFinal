@@ -33,19 +33,21 @@ public class DestinationFullBean implements Serializable {
 	private String region;
 	private String description;
 	private boolean promotion;
+	private String image;
 	
 	private List<DatesVoyages> dates;
 
 	public DestinationFullBean() {
 	}
 
-	public DestinationFullBean(int id, String continent, String pays, String region, String description, boolean promotion) {
+	public DestinationFullBean(int id, String continent, String pays, String region, String description, boolean promotion, String image) {
 		this.id = id;
 		this.continent = continent;
 		this.pays = pays;
 		this.region = region;
 		this.description = description;
 		this.promotion = promotion;
+		this.image = image;
 	}
 	
 	public String viewDates(int id) {
@@ -59,6 +61,7 @@ public class DestinationFullBean implements Serializable {
 		this.description = d.getDescription();
 		this.promotion = d.isPromotion();
 		this.dates = d.getDates();
+		this.image = d.getImage();
 		
 		return "viewDates?faces-redirect=true";
     }
@@ -129,6 +132,14 @@ public class DestinationFullBean implements Serializable {
 
 	public void setPromotion(boolean promotion) {
 		this.promotion = promotion;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }

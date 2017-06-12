@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -19,43 +19,40 @@
 				<p:panel id="creation">
 					<h:form>
 						<p:panelGrid columns="2" style="margin: auto;">
-							<f:facet name="header">Créer une destination</f:facet>
-
+							<f:facet name="header">Modification  d'une destination</f:facet>						
+				
 							<h:outputLabel for="continent" value="Continent :" />
-							<p:inputText id="continent" value="#{destination.continent }"
-								label="continent" placeholder="Continent" />
-
+							<p:inputText id="continent" value="#{destination.continent }" label="continent" placeholder="Continent" />
+				
 							<h:outputLabel for="pays" value="Pays :" />
-							<p:inputText id="pays" value="#{destination.pays }" label="pays"
-								placeholder="Pays" />
-
+							<p:inputText id="pays" value="#{destination.pays }" label="pays" placeholder="Pays" />
+							
 							<h:outputLabel for="region" value="Région :" />
 							<p:inputText id="region" value="#{destination.region }"
-								required="true" label="region" placeholder="Région" />
-
+								required="true" label="region" placeholder="Région"/>
+								
 							<h:outputLabel for="description" value="Description :" />
 							<p:inputTextarea id="description" label="description"
 								value="#{destination.description }" rows="6" cols="33" />
-
-							<h:outputLabel for="promo" value="Promotion :" />
+								
+							<h:outputLabel for="promo" value="Promotion :" />	
 							<h:selectOneRadio id="promo" value="#{destination.promotion}">
-								<f:selectItem itemValue="TRUE" itemLabel="Oui" />
-								<f:selectItem itemValue="FALSE" itemLabel="Non" />
+							   	<f:selectItem itemValue="TRUE" itemLabel="Oui" />
+							   	<f:selectItem itemValue="FALSE" itemLabel="Non" />
 							</h:selectOneRadio>	
-							Téléchargement image : <p:fileUpload type="file" name="multi-file"
-								multiple="multiple" />
-							<input type="submit" value="OK" />
-							<h:inputHidden value="#{destination.id}" />
-
+							<h:inputHidden value="#{destination.id}"/>
+										
 							<f:facet name="footer">
 								<p:commandButton value="Créer" icon="ui-icon-check"
 									style="margin:0" action="#{destination.add}" />
-								<p:commandButton value="Annuler" onclick="window.history.back()" />
+								<p:commandButton value="Annuler" onclick="window.history.back()"/>
 							</f:facet>
-
+							
 						</p:panelGrid>
 					</h:form>
 				</p:panel>
+				
+				
 			</f:view>
 		</ui:define>
 

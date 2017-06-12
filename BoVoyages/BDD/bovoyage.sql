@@ -61,16 +61,17 @@ CREATE TABLE `destinations` (
   `pays` varchar(255) DEFAULT NULL,
   `promotion` bit(1) NOT NULL,
   `region` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pk_destination`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `destinations` (`pk_destination`, `continent`, `region`, `pays`, `description`, `promotion`) VALUES
-(1, 'Amerique du nord','Guadeloupe', 'France', 'Dans un site exceptionnel,en bordure d''un petit lagon turquoise, tout est réuni pour un séjour paradisiaque à la découverte des merveilles de la terre et de la mer', TRUE),
-(2, 'Amerique du nord','Saint-Barthélémy', 'France', 'Imaginez une île où il fait 26 à 28 °C toute l''année, et où la température de la mer est la même que celle de l''air',TRUE),
-(3, 'Asie','Myanmar', 'Birmanie', 'La Birmanie est un pays passionnat pour tous ceux qui s''interessent à l''art, aux civilisations, à l''inddhouisme. Ce pays s''ouvre et a conservé toute la richesse de son patrimoine culturel',FALSE),
-(4, 'Amerique du nord','Canada', 'Canada', 'Découvrez la nature généreuse et les grandes villes du Canada en toute saison, grâce aux nombreux circuits que nous avons élaborés.',FALSE),
-(5, 'Europe','Alpes suisses', 'Suisse', 'Venez découvrir les paysages somptueux de la Suisse, aussi bien en été qu''en hiver.',FALSE);
+INSERT INTO `destinations` (`pk_destination`, `continent`, `region`, `pays`, `description`, `promotion`,`image`) VALUES
+(1, 'Amerique du nord','Guadeloupe', 'France', 'Dans un site exceptionnel,en bordure d''un petit lagon turquoise, tout est réuni pour un séjour paradisiaque à la découverte des merveilles de la terre et de la mer', TRUE,'guadeloupe'),
+(2, 'Amerique du nord','Saint-Barthélémy', 'France', 'Imaginez une île où il fait 26 à 28 °C toute l''année, et où la température de la mer est la même que celle de l''air',TRUE,'saint-Barthélémy'),
+(3, 'Asie','Myanmar', 'Birmanie', 'La Birmanie est un pays passionnat pour tous ceux qui s''interessent à l''art, aux civilisations, à l''inddhouisme. Ce pays s''ouvre et a conservé toute la richesse de son patrimoine culturel',FALSE,'birmanie'),
+(4, 'Amerique du nord','Canada', 'Canada', 'Découvrez la nature généreuse et les grandes villes du Canada en toute saison, grâce aux nombreux circuits que nous avons élaborés.',FALSE,'canada'),
+(5, 'Europe','Alpes suisses', 'Suisse', 'Venez découvrir les paysages somptueux de la Suisse, aussi bien en été qu''en hiver.',FALSE,'suisse');
 
 
 -- Dump completed on 2017-06-09 10:32:19
