@@ -8,7 +8,11 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+/**
+ * Bean de Deconnexion
+ * @author Adminl
+ *
+ */
 
 @Named("DeconnectionBean")
 @RequestScoped
