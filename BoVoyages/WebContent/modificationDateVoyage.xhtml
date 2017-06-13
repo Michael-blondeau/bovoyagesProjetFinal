@@ -16,34 +16,56 @@
 
 		<ui:define name="content">
 			<f:view>
-				<p:panel id="creation">
+				<p:panel id="creation" header="Ajouter une date de voyage">
 					<h:form>
-						<p:panelGrid columns="2" style="margin: auto;">
-							<f:facet name="header">Modifier une date de voyage</f:facet>
-							
-							<h:outputLabel for="depart" value="Date de départ :" />
-							<p:inputText id="depart" value="#{date.dateDepart}" placeholder="jj/mm/aaaa" >
-								<f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
-							</p:inputText>
-							
-							<h:outputLabel for="retour" value="Date de retour :" />
-							<p:inputText id="retour" value="#{date.dateRetour}" placeholder="jj/mm/aaaa" >
-								<f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
-							</p:inputText>
-								
-							<h:outputLabel for="prix" value="Prix (HT)" />
-							<p:inputText id="prix" value="#{date.prix}" placeholder="Prix H.T." />
-							
-							<h:outputLabel for="nbVoyageurs" value="Nombre de voyageurs" />
-							<p:inputText id="nbVoyageurs" value="#{date.nbVoyageurs}" placeholder="Nombre de voyageurs" />
-												
-								<h:inputHidden value="#{date.id}"/>	
-							<f:facet name="footer">
-								<p:commandButton value="Créer" icon="ui-icon-check"
-									style="margin:0" action="#{date.add}" />
-								<p:commandButton value="Annuler" onclick="window.history.back()"/>
-							</f:facet>
-						</p:panelGrid>
+						<div class="ui-g">
+
+							<div class="ui-g-12 ui-md-4 ui-lg-4">
+								<h:outputLabel for="depart" value="Date de départ :" />
+							</div>
+							<div class="ui-g-12 ui-md-8 ui-lg-8">
+								<p:inputText id="depart" value="#{date.dateDepart}"
+									placeholder="jj/mm/aaaa">
+									<f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
+								</p:inputText>
+							</div>
+
+							<div class="ui-g-12 ui-md-4 ui-lg-4">
+								<h:outputLabel for="retour" value="Date de retour :" />
+							</div>
+							<div class="ui-g-12 ui-md-8 ui-lg-8">
+								<p:inputText id="retour" value="#{date.dateRetour}"
+									placeholder="jj/mm/aaaa">
+									<f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
+								</p:inputText>
+							</div>
+
+							<div class="ui-g-12 ui-md-4 ui-lg-4">
+								<h:outputLabel for="prix" value="Prix (HT)" />
+							</div>
+							<div class="ui-g-12 ui-md-8 ui-lg-8">
+								<p:inputText id="prix" value="#{date.prix}"
+									placeholder="Prix H.T." />
+							</div>
+
+							<div class="ui-g-12 ui-md-4 ui-lg-4">
+								<h:outputLabel for="nbVoyageurs" value="Nombre de voyageurs" />
+							</div>
+							<div class="ui-g-12 ui-md-8 ui-lg-8">
+								<p:inputText id="nbVoyageurs" value="#{date.nbVoyageurs}"
+									placeholder="Nombre de voyageurs" />
+							</div>
+
+							<h:inputHidden value="#{date.id}" />
+							<div class="ui-g-12 ui-md-12 ui-lg-12">
+								<p:separator />
+							</div>
+							<div class="ui-g-12 ui-md-6 ui-lg-6">
+							<p:commandButton value="Modifier" icon="ui-icon-check"
+								style="margin:0" action="#{date.add}" />
+							<p:commandButton value="Annuler" onclick="window.history.back()" />
+							</div>
+						</div>
 					</h:form>
 				</p:panel>
 			</f:view>

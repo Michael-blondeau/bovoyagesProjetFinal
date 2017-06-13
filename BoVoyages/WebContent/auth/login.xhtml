@@ -13,25 +13,10 @@
 	<title>Bo Voyages - Authentification</title>
 </h:head>
 
-<style>
-.button {
-    background-color: #0099ff; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 8px;
-}
-</style>
 
 <header>
 	<div class="t-align-r">
-		<h:graphicImage value="resources/images/avatar.jpg" alt="Image"
+		<h:graphicImage value="resources/images/avatar2.jpg" alt="Image"
 			width="100" height="100" />
 		<div class="pull-r">
 			<div class="identite">John Doe</div>
@@ -41,12 +26,17 @@
 </header>
 
 <body>
+<div class="panel-auth">
 	<form name="formLogin" action="j_security_check" method="post">
-	<div>
-		Nom d'utilisateur :<input name="j_username" /><br/> 
-		Mot de passe      :                <input type="password" name="j_password" /><br/>
-		<button class="button">ok</button>
+	<div class="panel-auth-title">
+		<h2>Authentification</h2>
+	</div>
+	<div class="log">
+		Nom d'utilisateur : <input class="input-auth" name="j_username" /><br/> 
+		Mot de passe      : <input class="input-auth" type="password" name="j_password" /><br/>
+		<button class="button">Me connecter</button>
 	</div>
 	</form>
+	</div>
 </body>
 </html>

@@ -16,46 +16,70 @@
 
 		<ui:define name="content">
 			<f:view>
-				<p:panel id="creation">
+				<p:panel id="creation" header="Créer une destination">
 					<h:form enctype="multipart/form-data">
-						<p:panelGrid columns="2" style="margin: auto;">
-							<f:facet name="header">Créer une destination</f:facet>
+						<div class="ui-g">
 
-							<h:outputLabel for="continent" value="Continent :" />
-							<p:inputText id="continent" value="#{destination.continent }"
-								label="continent" placeholder="Continent" />
+							<div class="ui-g-12 ui-md-4 ui-lg-4">
+								<h:outputLabel for="continent" value="Continent :" />
+							</div>
+							<div class="ui-g-12 ui-md-8 ui-lg-8">
+								<p:inputText id="continent" value="#{destination.continent }"
+									label="continent" placeholder="Continent" />
+							</div>
 
-							<h:outputLabel for="pays" value="Pays :" />
-							<p:inputText id="pays" value="#{destination.pays }" label="pays"
-								placeholder="Pays" />
+							<div class="ui-g-12 ui-md-4 ui-lg-4">
+								<h:outputLabel for="pays" value="Pays :" />
+							</div>
+							<div class="ui-g-12 ui-md-8 ui-lg-8">
+								<p:inputText id="pays" value="#{destination.pays }" label="pays"
+									placeholder="Pays" />
+							</div>
 
-							<h:outputLabel for="region" value="Région :" />
-							<p:inputText id="region" value="#{destination.region }"
-								required="true" label="region" placeholder="Région" />
+							<div class="ui-g-12 ui-md-4 ui-lg-4">
+								<h:outputLabel for="region" value="Région :" />
+							</div>
+							<div class="ui-g-12 ui-md-8 ui-lg-8">
+								<p:inputText id="region" value="#{destination.region }"
+									required="true" label="region" placeholder="Région" />
+							</div>
 
-							<h:outputLabel for="description" value="Description :" />
-							<p:inputTextarea id="description" label="description"
-								value="#{destination.description }" rows="6" cols="33" />
+							<div class="ui-g-12 ui-md-4 ui-lg-4">
+								<h:outputLabel for="description" value="Description :" />
+							</div>
+							<div class="ui-g-12 ui-md-8 ui-lg-8">
+								<p:inputTextarea id="description" label="description"
+									value="#{destination.description }" rows="6" />
+							</div>
 
-							<h:outputLabel for="promo" value="Promotion :" />
-							<h:selectOneRadio id="promo" value="#{destination.promotion}">
-								<f:selectItem itemValue="TRUE" itemLabel="Oui" />
-								<f:selectItem itemValue="FALSE" itemLabel="Non" />
-							</h:selectOneRadio>
-							<p:fileUpload  mode="simple" actionListener="#{destination.file}"></p:fileUpload>
-							<p:commandButton value="Submit" ajax="false" action="#{destination.submit}"/>
-							
-							<p:separator />
-							
+							<div class="ui-g-12 ui-md-4 ui-lg-4">
+								<h:outputLabel for="promo" value="Promotion :" />
+							</div>
+							<div class="ui-g-12 ui-md-8 ui-lg-8">
+								<h:selectOneRadio id="promo" value="#{destination.promotion}">
+									<f:selectItem itemValue="TRUE" itemLabel="Oui" />
+									<f:selectItem itemValue="FALSE" itemLabel="Non" />
+								</h:selectOneRadio>
+							</div>
+							<div class="ui-g-12 ui-md-8 ui-lg-7">
+								<p:fileUpload mode="simple" actionListener="#{destination.file}"></p:fileUpload>
+							</div>
+							<div class="ui-g-12 ui-md-4 ui-lg-5">
+								<p:commandButton value="Envoyer" ajax="false"
+									action="#{destination.submit}" />
+							</div>
+
 							<h:inputHidden value="#{destination.id}" />
-
-							<f:facet name="footer">
+							<div class="ui-g-12 ui-md-12 ui-lg-12">
+								<p:separator />
+							</div>
+							<div class="ui-g-12 ui-md-6 ui-lg-6">
 								<p:commandButton value="Créer" icon="ui-icon-check"
 									style="margin:0" action="#{destination.add}" />
 								<p:commandButton value="Annuler" onclick="window.history.back()" />
-							</f:facet>
+							</div>
 
-						</p:panelGrid>
+						</div>
 					</h:form>
 				</p:panel>
 			</f:view>

@@ -89,7 +89,7 @@ public class DestinationBean implements Serializable {
 		this.description = d.getDescription();
 		this.promotion = d.isPromotion();
 		this.image = d.getImage();
-		return "creationDestination?faces-redirect=true";
+		return "modificationDestination?faces-redirect=true";
 	}
   
 	public void submit() throws IOException{ 
