@@ -18,7 +18,7 @@ import voyage.exceptions.DAOException;
  * 
  * Une implémentation est fournie avec la classe {@link CatalogueDAO}.
  * 
- * @author Pierrik et Michael
+ * @author Aurelie, Ana, Youssef et Michael
  *
  */
 public interface ICatalogueDAO {
