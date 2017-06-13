@@ -19,6 +19,15 @@ header{
 /*     padding-top: 20px; */
 }
 
+.banniere{
+	position: absolute;
+	height: 150px;
+}
+
+.user{
+ 	position: relative; 
+}
+
 .t-align-r{
 	text-align: right;
 }
