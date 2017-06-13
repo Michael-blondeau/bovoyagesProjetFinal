@@ -62,6 +62,7 @@ public class DestinationBean implements Serializable {
 		if(id!=0){
 			destination.setId(id);
 		}
+		
 		if (this.file != null) {
 			
 			try {
@@ -93,6 +94,7 @@ public class DestinationBean implements Serializable {
 	}
   
 	public void submit() throws IOException{ 
+		
 		if(file!=null){
 		String folder = FacesContext.getCurrentInstance().getExternalContext().getInitParameter("upload-folder");
 		this.image = file.getFileName();
@@ -101,6 +103,7 @@ public class DestinationBean implements Serializable {
 		try {
 			InputStream in = file.getInputstream();
 			Files.copy(in, path);
+			
 			in.close();
 			setImage(image);
 		} catch (IOException e) {

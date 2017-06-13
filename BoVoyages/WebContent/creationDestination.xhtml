@@ -42,8 +42,8 @@
 								<f:selectItem itemValue="TRUE" itemLabel="Oui" />
 								<f:selectItem itemValue="FALSE" itemLabel="Non" />
 							</h:selectOneRadio>
-							<p:fileUpload  mode="simple" actionListener="#{destination.file}"></p:fileUpload>
-							<p:commandButton value="Submit" ajax="false" action="#{destination.submit}"/>
+							<p:fileUpload  mode="simple" value="#{destination.file}"></p:fileUpload>
+							<p:commandButton value="submit" ajax="false" action="#{destination.submit}"/>
 							
 							<p:separator />
 							
