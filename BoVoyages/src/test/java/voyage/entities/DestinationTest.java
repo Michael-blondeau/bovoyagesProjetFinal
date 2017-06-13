@@ -30,8 +30,6 @@ public class DestinationTest {
 		assertEquals("Description", dest.getDescription());
 		assertEquals("Image", dest.getImage());
 		assertEquals(true, dest.isPromotion());
-		assertEquals(0, dest.getId());
-		assertEquals("",dest.getImage());
 	}
 
 	@Test
