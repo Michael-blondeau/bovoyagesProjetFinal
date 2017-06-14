@@ -8,25 +8,50 @@ body{
 }
 
 header{
-/* 	background: linear-gradient(to right, rgb(0, 107, 179), rgb(230, 247, 255)); */
-	background-image: url("../resources/images/banniere2.png") ;
+	background: linear-gradient(to right, rgb(0, 107, 179), rgb(230, 247, 255));
+/* 	background-image: url("../resources/images/banniere2.png") ; */
 	background-repeat:no-repeat;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    height: 310px;
+    height: 200px;
     whidth: 100%;
     position: relative;
 /*     padding-top: 20px; */
 }
+
+.banniere{
+/* 	position: absolute; */
+	margin: auto;
+	
+}
+
+.slogan{
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+}
+
+/* .user{ */
+/*  	position: relative;  */
+/*  	bottom: 140px; */
+/* } */
 
 .t-align-r{
 	text-align: right;
 }
 
 .logo{
-	position: absolute;
-    bottom: 8px;
-    right: 16px;
+/* 	position: absolute; */
+/*     bottom: 8px; */
+/*     right: 16px; */
+	
+	margin-left:15px;
+	width:90%;
+}
+.logo-2{
+	margin-left:15px;
+/* 	width:90%; */
+    padding-top: 30px;
 }
 
 .pad-t-r{

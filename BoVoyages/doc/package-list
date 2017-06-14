@@ -1,4 +1,8 @@
+voyage.beans
 voyage.dao
+voyage.deconnection
 voyage.entities
+voyage.exceptions
+voyage.rest
 voyage.services
-voyage.web
+voyage.web.images
